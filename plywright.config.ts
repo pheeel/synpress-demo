@@ -11,5 +11,11 @@ export default defineConfig({
   workers: 1,
   reporter: "html",
   outputDir: "test-results",
-  testMatch:'*spec.ts'
+  testMatch:'*spec.ts',
+  use: {
+    actionTimeout: 1000 * 80,
+    launchOptions: {
+      slowMo: 250,
+    },
+  }
 });
