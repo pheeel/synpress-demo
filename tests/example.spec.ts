@@ -3,13 +3,13 @@ import { test, expect } from "../pw-fixtures";
 import * as metamask from "@synthetixio/synpress/commands/metamask";
 
 let sharedPage: Page;
-
-test.describe.configure({ mode: "serial" });
-
-test.beforeAll(async ({ page }) => {
-  sharedPage = page;
-  await page.goto("https://side.xyz/login");
-});
+//
+// test.describe.configure({ mode: "serial" });
+//
+// test.beforeAll(async ({ page }) => {
+//   sharedPage = page;
+//   await page.goto("https://side.xyz/login");
+// });
 //
 // test.afterAll(async ({ context }) => {
 //   await context.close();
@@ -33,9 +33,9 @@ test.beforeAll(async ({ page }) => {
 // });
 
 
-test("connect wallet using default metamask account", async (page) => {
+test("connect wallet using default metamask account", async ({page}) => {
   // await page.goto(url);
-  // await page.goto("https://side.xyz/login");
+  await page.goto("https://side.xyz/login");
   await page.click("text=MetaMask");
   // await page.waitForTimeout(6000);
   await metamask.acceptAccess({ confirmSignatureRequest: true });

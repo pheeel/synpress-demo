@@ -11,4 +11,5 @@ export default defineConfig({
   workers: 1,
   reporter: "html",
   outputDir: "test-results",
+  testMatch:'*spec.ts'
 });
