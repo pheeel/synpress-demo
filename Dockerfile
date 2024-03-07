@@ -9,4 +9,5 @@ COPY yarn.lock ./
 
 FROM base as test
 RUN yarn --frozen-lockfile --prefer-offline --no-audit
+RUN npx playwright install chromium
 COPY . .
